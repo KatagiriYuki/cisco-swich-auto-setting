@@ -1,0 +1,38 @@
+config-file-header
+switchb3fa86
+v3.0.0.69 / RCBS3.0_930_770_008
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start 
+ssd config 
+ssd file passphrase control unrestricted 
+no ssd file integrity control 
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0 
+!
+!
+unit-type-control-start 
+unit-type unit 1 network gi uplink none 
+unit-type-control-end
+!
+vlan database
+vlan 2
+exit
+bonjour interface range vlan 1
+hostname switchb3fa86
+username yokogawa password encrypted $15$VBaDzd2SLxJB0X9k$yfOBo91tCjKD115mziWdDNR8oREqkjPplEH2aQvB4HohSghUF4l4riLC/URnLBNDJf1DvWI7HUpXEJifDJ+GbA== privilege 15 
+ip ssh server
+ip ssh password-auth 
+!
+interface vlan 1
+ no ip address dhcp 
+!
+interface vlan 2
+ name MNG 
+ ip address 172.24.240.249 255.255.0.0 
+!
+interface GigabitEthernet1
+ no macro auto smartport
+ spanning-tree link-type point-to-point 
+ switchport access vlan 2
+!

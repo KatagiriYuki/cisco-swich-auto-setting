@@ -1,0 +1,12 @@
+config-file-header
+switchb3fa86
+v3.0.0.69 / RCBS3.0_930_770_008
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start 
+ssd config 
+ssd file passphrase control unrestricted 
+no ssd file integrity control 
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0 
+!

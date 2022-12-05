@@ -1,0 +1,17 @@
+!
+vlan database
+vlan 2
+exit
+bonjour interface range vlan 1
+hostname switchb3fa86
+username yokogawa password encrypted $15$VBaDzd2SLxJB0X9k$yfOBo91tCjKD115mziWdDNR8oREqkjPplEH2aQvB4HohSghUF4l4riLC/URnLBNDJf1DvWI7HUpXEJifDJ+GbA== privilege 15 
+ip ssh server
+ip ssh password-auth 
+!
+interface vlan 1
+ no ip address dhcp 
+!
+interface vlan 2
+ name MNG 
+ ip address 172.24.240.249 255.255.0.0 
+!

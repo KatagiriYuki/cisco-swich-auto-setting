@@ -1,0 +1,5 @@
+interface GigabitEthernet1
+ no macro auto smartport
+ spanning-tree link-type point-to-point 
+ switchport access vlan 2
+!

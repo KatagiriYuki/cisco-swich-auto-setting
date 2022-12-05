@@ -1,0 +1,20 @@
+import os
+
+header_file = open("config_file/header.txt", "r")
+unit_type_file = open("config_file/unit_type.txt", "r")
+vlan_id_file = open("config_file/vlan_id.txt", "r")
+switch_port_file = open("config_file/switch_port.txt", "r")
+
+header_lines = header_file.readlines()
+unit_type_lines = unit_type_file.readlines()
+vlan_id_lines = vlan_id_file.readlines()
+switch_port_lines = switch_port_file.readlines()
+
+lines = []
+lines.extend(header_lines)
+lines.extend(unit_type_lines)
+lines.extend(vlan_id_lines)
+lines.extend(switch_port_lines)
+
+with open("config_file.txt", "w") as f:
+    f.writelines(lines)
